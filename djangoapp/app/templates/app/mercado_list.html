@@ -1,0 +1,22 @@
+{% load static %}
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="{% static 'base.css' %}">
+    </head>
+    <body>
+        <div class="header">
+            <h1 >Mercado Libre</h1>
+        </div>
+        <div class="content">
+        {% for object in object_list %}
+            <h3>{{object.titulo}}</h3>
+            <h3>{{object.precio}}</h3>
+            <h3>{{object.envio}}</h3>
+            <h3>{{object.vendido}}</h3>
+            <h3>{{object.opiniones}}</h3>
+            <span class="posted-at">{{object.posted_at}}</span>
+            <p>{{object.short_text|safe}}</p>
+        {% endfor %}
+        </div>
+    </body>
+</html>
